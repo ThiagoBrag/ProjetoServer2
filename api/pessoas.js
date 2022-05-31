@@ -19,14 +19,17 @@ function buscarPessoas() {
 
 router.post("/", (req, res) => {
     const pessoa = criarPessoa(req.body);
-    pessoasLista.push(pessoa)
+    if (pessoa.constructor.name == "Error") {
+        return res.status(400).send(pessoa.message);
+    }
     res.json(pessoa)
 })
 
 function criarPessoa(pessoa) {
     if (pessoa.cpf == null || pessoa.nome == null || pessoa.nome == '' ) {
-        res.status(400).send("Insira um CPF ou nome válido! Anta!")
+        return new Error("Insira um CPF ou nome válido! Anta!");
     } else {pessoa.id = pessoasLista.length + 1;
+        pessoasLista.push(pessoa)
         return pessoa
     }
     
