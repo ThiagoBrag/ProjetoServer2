@@ -12,7 +12,6 @@ function buscarPessoa(id) {
 }
 
 function criarPessoas(pessoa) {
-// return new Error("É preciso inserir o nome e o cpf!");
     const id = pessoas.length + 1;
     pessoa.id = id;
     pessoas.push(pessoa);
