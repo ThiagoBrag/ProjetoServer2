@@ -2,22 +2,22 @@ const express = require("express");
 const router = express.Router();
 
 const pessoas = [
-    { id: 1, nome: "Diego", cpf: "12345678910" },
-    { id: 2, nome: "João", cpf: "01987654321" },
-    { id: 3, nome: "Thiago", cpf: "32165498701" },
+    { id: 1, nome: "Thiago", cpf: "11111111111" },
+    { id: 2, nome: "Diego", cpf: "22222222222" },
+    { id: 3, nome: "João", cpf: "33333333333" },
 ];
 
 const usuarios = [
-    {id: 1, nome: "diego", senha: "123"},
-    {id: 2, nome: "jao", senha: "321"},
-    {id: 3, nome: "thigas", senha: "456"},
+    {id: 1, nome: "thigas", senha: "123"},
+    {id: 2, nome: "dieguito", senha: "123"},
+    {id: 3, nome: "jão", senha: "123"},
 ]
 
 const boletos = [
-    {id: 1, valor: 500, id_user: 1, id_pessoa: 1, status: "pago", nome:"Diego"},
-    {id: 2, valor: 600, id_user: 1, id_pessoa: 1, status: "Pendente", nome:"Diego"},
-    {id: 3, valor: 400, id_user: 2, id_pessoa: 2, status: "pago", nome:"João"},
-    {id: 4, valor: 300, id_user: 3, id_pessoa: 3, status: "pago", nome:"Thiago"}
+    {id: 1, valor: 1000, id_user: 1, id_pessoa: 1, status: "pago", nome:"Luz"},
+    {id: 2, valor: 660, id_user: 2, id_pessoa: 2, status: "Pendente", nome:"Senai"},
+    {id: 3, valor: 1200, id_user: 3, id_pessoa: 3, status: "pago", nome:"Água"},
+    {id: 4, valor: 200, id_user: 1, id_pessoa: 1, status: "pago", nome:"Internet"}
 ]
 
 module.exports = {router, pessoas, usuarios, boletos}
