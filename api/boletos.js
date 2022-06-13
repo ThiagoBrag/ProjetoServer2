@@ -4,8 +4,6 @@ const funcoesBoleto = require('./function/fuctionBoleto');
 const funcoesUsuario = require("./function/fuctionUsuario")
 const funcoesPessoa = require('./function/functionPessoa');
 
-//terminar get by pessoa
-
 router.get("/", (req, res) => {
     res.json(funcoesBoleto.buscarboletos());
 })
@@ -28,10 +26,10 @@ router.post("/", (req, res) => {
             funcoesBoleto.criarboletos(boleto)
             res.json(boleto)
         } else {
-            res.status(400).send("Valor não pode ser menor que 0!")
+            res.status(400).send("O valor do boleto não pode ser menor ou igual a 0!")
         }
     } else {
-        res.status(400).send("Pessoa ou usuario não encontrado!")
+        res.status(400).send("Pessoa ou usuário não encontrado!")
     }
 })
 
