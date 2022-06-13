@@ -25,7 +25,9 @@ function editarPessoas(id, pessoa) {
 
 function deletarPessoa(id) {
     const index = pessoas.findIndex(p => p.id == id)
-    pessoas.splice(index, 1);
+    if (index > 0) {
+        pessoas.splice(index, 1);
+    }
 }
 
 module.exports = {router, deletarPessoa, editarPessoas, criarPessoas, buscarPessoa, buscarPessoas};
