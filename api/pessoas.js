@@ -12,16 +12,12 @@ router.get("/:id", (req, res) => {
 });
 
 router.post("/", (req, res) => {
-  // const pessoa = funcoesPessoa.criarPessoas(req.body);
   const pessoa = req.body;
   if (pessoa.nome == "" || pessoa.cpf == "" || pessoa.nome == null || pessoa.cpf == null) {
     res.status(400).send("É preciso inserir um nome e um CPF!");
   } else {
     funcoesPessoa.criarPessoas(pessoa);
   }
-  // if (pessoa.constructor.name == "Error") {
-  //   return res.status(400).send(pessoa.message);
-  // }
   res.json(pessoa);
 });
 
