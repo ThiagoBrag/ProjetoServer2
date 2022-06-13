@@ -1,7 +1,7 @@
 {
-  "name": "projetoserver2",
+  "name": "servidor_boleto",
   "version": "1.0.0",
-  "description": "projeto em js",
+  "description": "",
   "main": "index.js",
   "scripts": {
     "start": "nodemon index.js",
@@ -9,15 +9,16 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/ThiagoBrag/ProjetoServer2.git"
+    "url": "git+https://github.com/frst157/Servidor_Boleto.git"
   },
-  "author": "thiago",
+  "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/ThiagoBrag/ProjetoServer2/issues"
+    "url": "https://github.com/frst157/Servidor_Boleto/issues"
   },
-  "homepage": "https://github.com/ThiagoBrag/ProjetoServer2#readme",
+  "homepage": "https://github.com/frst157/Servidor_Boleto#readme",
   "dependencies": {
-    "express": "^4.18.1"
+    "express": "^4.18.1",
+    "nodemon": "^2.0.16"
   }
 }

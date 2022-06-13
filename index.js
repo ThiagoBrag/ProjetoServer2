@@ -1,16 +1,22 @@
-const express = require('express')
-const router = require('./api/pessoas');
-const app = express()
-const port = 3200;
+const express = require('express');
+const pessoas = require('./api/pessoas');
+const usuarios = require("./api/usuarios")
+const boletos = require("./api/boletos")
+const app = express();
+const port = 3000;
 
-app.use(express.json())
+// res.status(400).send("Não encontrado")
 
-app.listen(port, () => {
-    console.log(`Executando em: http://localhost:${port}`)
-})
+app.use(express.json());
+app.use("/api/pessoas", pessoas.router)
+app.use("/api/usuarios", usuarios.router)
+app.use("/api/boletos", boletos.router)
 
 app.get("/", (req, res) => {
-    res.send("Home")
+    res.send("Hello world")
 })
 
-app.use("/api/pessoas",router.router);
+app.listen(port, () => {
+    console.log(`RODANDO EM ${port}`);
+})
+
