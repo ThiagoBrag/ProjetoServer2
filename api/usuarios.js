@@ -14,7 +14,7 @@ router.get("/:id", (req, res) => {
 router.post("/", (req, res) => {
     const user = req.body
     if(user.nome == null || user.senha == null || user.senha == "" || user.nome == ""){
-        res.status(400).send("É preciso inserir o nome e a senha!");
+        res.status(400).send("É preciso inserir um nome e uma senha!");
     } else {
         funcoesUsuario.criarUsers(user);
         res.json(user)
@@ -35,7 +35,7 @@ router.delete("/:id", (req, res) => {
         funcoesUsuario.deletarUsers(id);
         res.json(funcoesUsuario.buscarUsuarios())
     } else {
-        res.status(400).send("Não é possível deletar o usuário, pois existem boletos vinculados a ele!");
+        res.status(400).send("Existem boletos vinculados a este usuário! Impossível continuar exclusão!");
     }
 })
 
