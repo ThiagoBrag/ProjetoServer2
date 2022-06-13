@@ -3,7 +3,6 @@ const router = express.Router();
 const funcoesPessoa = require("./function/functionPessoa")
 const funcoesBoleto = require("./function/fuctionBoleto");
 
-
 router.get("/", (req, res) => {
   res.json(funcoesPessoa.buscarPessoas());
 });
@@ -16,7 +15,7 @@ router.post("/", (req, res) => {
   // const pessoa = funcoesPessoa.criarPessoas(req.body);
   const pessoa = req.body;
   if (pessoa.nome == "" || pessoa.cpf == "" || pessoa.nome == null || pessoa.cpf == null) {
-    res.status(400).send("É preciso inserir o nome e o cpf!");
+    res.status(400).send("É preciso inserir um nome e um CPF!");
   } else {
     funcoesPessoa.criarPessoas(pessoa);
   }
@@ -39,7 +38,7 @@ router.delete("/:id", (req, res) => {
     funcoesPessoa.deletarPessoa(id);
     res.json(funcoesPessoa.buscarPessoa())
   } else {
-    res.status(400).send("Pessoa possui boletos!");
+    res.status(400).send("Esta pessoa possui boletos! Impossível continuar a exclusão da pessoa!");
   }
 });
 
